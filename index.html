@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuta Iwai | Portfolio</title>
+    
+    <meta name="description" content="Shuta Iwai — mathematics student at UIUC. Analytic number theory, mathematical biology, and computational genetics.">
+    <meta name="author" content="Shuta Iwai">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shuta Iwai | Portfolio">
+    <meta property="og:description" content="Mathematics • Biology • Complex systems">
+    <meta property="og:url" content="https://yoursite.com">
+    <meta property="og:image" content="https://yoursite.com/preview.png">
+
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%23211622%27%2F%3E%3Cpath%20d%3D%27M11%2C5%20C22%2C12%2011%2C20%2021%2C27%27%20fill%3D%27none%27%20stroke%3D%27%235bc0be%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%2F%3E%3Cpath%20d%3D%27M21%2C5%20C10%2C12%2021%2C20%2011%2C27%27%20fill%3D%27none%27%20stroke%3D%27%2300d2d3%27%20stroke-width%3D%272.4%27%20stroke-linecap%3D%27round%27%2F%3E%3Cline%20x1%3D%2713%27%20y1%3D%2710%27%20x2%3D%2719%27%20y2%3D%2710%27%20stroke%3D%27%23ffbc42%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%2F%3E%3Cline%20x1%3D%2714%27%20y1%3D%2716%27%20x2%3D%2718%27%20y2%3D%2716%27%20stroke%3D%27%23ff7f50%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%2F%3E%3Cline%20x1%3D%2713%27%20y1%3D%2722%27%20x2%3D%2719%27%20y2%3D%2722%27%20stroke%3D%27%23ffbc42%27%20stroke-width%3D%272%27%20stroke-linecap%3D%27round%27%2F%3E%3C%2Fsvg%3E">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cinzel:wght@700&family=Dancing+Script:wght@700&family=Fredericka+the+Great&family=Montserrat:wght@200;900&family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:ital,wght@0,900;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Zen+Maru+Gothic:wght@500;700&display=swap');
+
+        body {
+            background-color: #211622; 
+            color: #d1d9e6;
+            font-family: 'Space Mono', monospace;
+            padding: 4rem 15%;
+            margin: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        
+        .lang-toggle {
+            position: absolute;
+            top: 1.25rem;
+            right: 15%;
+            display: flex;
+            gap: 0.75rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+        .lang-toggle span {
+            cursor: pointer;
+            opacity: 0.5;
+            transition: 0.2s;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+        }
+        .lang-toggle span:hover { opacity: 0.85; }
+        .lang-toggle span.active {
+            opacity: 1;
+            color: #ffbc42;
+            border-bottom: 1px solid #ffbc42;
+        }
+
+        
+        .t-ja { display: none; font-family: 'Noto Sans JP', 'Space Mono', sans-serif; }
+        body.ja .t-en { display: none; }
+        body.ja .t-ja { display: inline; }
+        body.ja .t-ja.block { display: block; }
+        
+        .label .t-en { display: inline-flex; align-items: baseline; gap: 2px; }
+        body.ja .label .t-en { display: none; }
+        .label .t-ja { font-family: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif; color: #ffbc42; }
+
+        .name-container {
+            font-size: 4.5rem; 
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            color: #ffffff;
+        }
+
+
+        .tagline {
+            color: #b8c2d6;
+            font-size: 1.05rem;
+            letter-spacing: 0.08em;
+            margin-top: -0.25rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+
+        .l-S { font-family: 'Playfair Display', serif; font-style: italic; color: #ffbc42; font-size: 1em; }
+        .l-h { font-family: 'Montserrat', sans-serif; font-weight: 200; font-size: 0.8em; }
+        .l-u { font-family: 'Dancing Script', cursive; color: #ff7f50; font-size: 1em; transform: translateY(-5px); display: inline-block;}
+        .l-t { font-family: 'Abril Fatface', serif; font-size: 0.9em; }
+        .l-a1 { font-family: 'Fredericka the Great', cursive; font-size: 1em; }
+        
+        .l-I { font-family: 'Cinzel', serif; font-size: 1em; color: #00d2d3; }
+        .l-w { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 0.75em; }
+        .l-a2 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 0.75em; }
+        .l-i { font-family: 'Dancing Script', cursive; color: #ff7f50; font-size: 1em; }
+
+       
+        .dna-container {
+            width: 100%;
+            max-width: 540px;   
+            height: 76px;
+            margin-bottom: 0.75rem;  
+            opacity: 0.9;
+        }
+
+        /* Tabs Navigation */
+        .tabs { 
+            display: flex; 
+            gap: 2.5rem; 
+            margin-bottom: 3rem; 
+            border-bottom: 1px solid #3a506b; 
+            padding-bottom: 0.5rem; 
+        }
+        .tab-link { 
+            cursor: pointer; 
+            font-size: 1.4rem;
+            font-family: 'Space Mono', monospace;
+            color: #ffffff;
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.5rem;
+            opacity: 0.6;
+        }
+        .tab-link:hover, .tab-link.active { 
+            opacity: 1;
+            border-bottom: 2px solid #ffffff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+
+       
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+       
+        .bio-intro {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: #d1d9e6;
+            max-width: 680px;
+        }
+        .bio-intro strong { color: #ffbc42; font-weight: 700; }
+
+       
+        .grid { 
+            display: grid; 
+            grid-template-columns: 220px 1fr; 
+            gap: 2rem; 
+            margin-bottom: 3rem; 
+            align-items: baseline;
+        }
+        
+        .label { 
+            font-size: 1.8rem; 
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+        }
+        
+        .entry { 
+            font-size: 1rem; 
+            line-height: 1.8; 
+            color: #d1d9e6;
+        }
+
+       
+        .entry .lab { margin-bottom: 0.9em; }
+        .entry .lab:last-child { margin-bottom: 0; }
+        .lab-name { display: block; }
+        .lab-affil { display: block; opacity: 0.55; font-size: 0.9em; }
+
+        a.text-link { 
+            color: #ffbc42; 
+            text-decoration: none; 
+            border-bottom: 1px dashed #ffbc42; 
+            transition: 0.2s;
+        }
+        a.text-link:hover { 
+            color: #ffffff; 
+            border-bottom: 1px solid #ffffff; 
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; gap: 0.5rem; margin-bottom: 2rem; }
+            .name-container { font-size: 3rem; }
+            .tabs { gap: 1rem; flex-wrap: wrap; }
+            .tab-link { font-size: 1.1rem; }
+            .bio-intro { font-size: 1.05rem; }
+            .lang-toggle { right: 8%; }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <div class="lang-toggle">
+        <span data-lang="en" class="active" onclick="setLang('en')">EN</span>
+        <span data-lang="ja" onclick="setLang('ja')">日本語</span>
+    </div>
+
+   
+    <div class="name-container">
+        <span class="l-S">S</span><span class="l-h">h</span><span class="l-u">u</span><span class="l-t">t</span><span class="l-a1">a</span>
+        <span style="width: 1.5rem;"></span>
+        <span class="l-I">I</span><span class="l-w">w</span><span class="l-a2">a</span><span class="l-i">i</span>
+    </div>
+
+    <div class="tagline">
+        <span class="t-en">Mathematics &bull; Biology &bull; Complex systems</span>
+        <span class="t-ja">数学 &bull; 生物学 &bull; 複雑系</span>
+    </div>
+
+
+
+    
+    <div class="dna-container t-en">
+        <svg viewBox="0 0 540 76" preserveAspectRatio="xMidYMid meet" style="width:100%; height:100%;">
+
+            <path id="dnaWave" fill="none" stroke="none"
+                  d="M 40,38 C 48,28 57,28 65,38 C 73,48 82,48 90,38 C 98,28 107,28 115,38
+                     C 123,48 132,48 140,38 C 148,28 157,28 165,38 C 173,48 182,48 190,38
+                     C 198,28 207,28 215,38 C 223,48 232,48 240,38"/>
+
+            
+            <circle cx="290" cy="38" r="10" fill="#211622" stroke="#ffbc42" stroke-width="1.5"/>
+            <circle cx="370" cy="38" r="10" fill="#211622" stroke="#ffbc42" stroke-width="1.5"/>
+
+            
+            <path fill="none" stroke="#5bc0be" stroke-width="2" stroke-linecap="round"
+                  d="M 26,45 C 14,42 14,30 26,29 C 38,28 39,39 28,41 C 23,42 24,38 40,38
+                     C 48,28 57,28 65,38 C 73,48 82,48 90,38 C 98,28 107,28 115,38
+                     C 123,48 132,48 140,38 C 148,28 157,28 165,38 C 173,48 182,48 190,38
+                     C 198,28 207,28 215,38 C 223,48 232,48 240,38
+                     C 270,38 260,18 290,18 C 320,18 320,58 290,58 C 260,58 270,38 330,38
+                     C 350,38 340,18 370,18 C 400,18 400,58 370,58 C 340,58 350,38 430,38 L 458,38"/>
+
+            <g id="chromo"></g>
+
+            <g id="slashes"></g>
+        </svg>
+    </div>
+
+
+    <div class="dna-container t-ja block">
+        <svg viewBox="0 0 540 76" preserveAspectRatio="xMidYMid meet" style="width:100%; height:100%;">
+            <g id="mathband"></g>
+        </svg>
+    </div>
+
+   
+    <div class="tabs">
+        <div class="tab-link active" onclick="showTab('bio', this)"><span class="t-en">Biography</span><span class="t-ja">経歴</span></div>
+        <div class="tab-link" onclick="showTab('research', this)"><span class="t-en">Experience</span><span class="t-ja">研究</span></div>
+        <div class="tab-link" onclick="showTab('pubs', this)"><span class="t-en">Publications</span><span class="t-ja">論文</span></div>
+    </div>
+
+   
+    <div id="bio" class="tab-content active">
+
+        <div class="grid">
+    <div class="label">
+        <span class="t-en"><span class="l-S">A</span><span class="l-h">b</span><span class="l-u">o</span><span class="l-t">u</span><span class="l-a1">t</span></span>
+        <span class="t-ja">自己紹介</span>
+    </div>
+
+    <div class="entry bio-intro">
+        <span class="t-en">Hi — I'm Shuta Iwai, a mathematics student at the University of Illinois Urbana-Champaign.
+        On the pure side, I'm interested in <strong>analytic number theory</strong> while on the applied side, I focus on <strong>mathematical biology and computational genetics</strong>. More generally, 
+        I enjoy understanding complex systems.</span>
+        
+        <span class="t-ja">はじめまして、岩井秀太です。イリノイ大学アーバナ・シャンペーン校で数学を学んでいます。純粋数学では<strong>解析的整数論</strong>、応用面では<strong>数理生物学と計算遺伝学</strong>の研究をしています。</span>
+    </div>
+    </div>
+        <div class="grid">
+            <div class="label">
+                <span class="t-en"><span class="l-S">A</span><span class="l-h">f</span><span class="l-u">f</span><span class="l-i">i</span><span class="l-a1">l</span><span class="l-I" style="font-size: 0.8em">i</span><span class="l-a2">a</span><span class="l-t">t</span><span class="l-i">i</span><span class="l-o" style="font-family: 'Space Mono'; font-size:0.7em;">o</span><span class="l-n" style="font-family: 'Montserrat'; font-weight:900; font-size:0.75em;">n</span></span>
+                <span class="t-ja">所属</span>
+            </div>
+            <div class="entry">
+                <span class="t-en">University of Illinois Urbana-Champaign, Mathematics</span>
+                <span class="t-ja">イリノイ大学アーバナ・シャンペーン校、数学科</span>
+            </div>
+        </div>
+
+      
+        <div class="grid">
+            <div class="label">
+                <span class="t-en"><span class="l-S">E</span><span class="l-h">m</span><span class="l-u">a</span><span class="l-i">i</span><span class="l-t">l</span></span>
+                <span class="t-ja">メール</span>
+            </div>
+            <div class="entry">
+               
+                <a href="mailto:siwai2@illinois.edu" class="text-link">
+                    <span class="t-en">siwai_@illinois.edu (replace _ with 2)</span>
+                    <span class="t-ja">siwai_@illinois.edu（_ を 2 に置き換えてください）</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+   
+    <div id="research" class="tab-content">
+        <div class="grid">
+            <div class="label">
+                <span class="t-en"><span class="l-S">L</span><span class="l-h">a</span><span class="l-u">b</span><span class="l-t">s</span></span>
+                <span class="t-ja">研究室</span>
+            </div>
+            <div class="entry">
+              
+                <div class="t-en">
+                    <div class="lab">
+                        <span class="lab-name">Cognitive Decision-Making Lab</span>
+                        <span class="lab-affil">University of Illinois Urbana-Champaign</span>
+                    </div>
+                    <div class="lab">
+                        <span class="lab-name">Bimed-Math Lab</span>
+                        <span class="lab-affil">ASHBi, Kyoto University</span>
+                    </div>
+                    <div class="lab">
+                        <span class="lab-name">St. Giles Laboratory of Human Genetics of Infectious Diseases</span>
+                        <span class="lab-affil">Rockefeller University &rarr; UT Southwestern</span>
+                    </div>
+                </div>
+              
+                <div class="t-ja block">
+                    <div class="lab">
+                        <span class="lab-name">Cognitive Decision-Making Lab</span>
+                        <span class="lab-affil">イリノイ大学アーバナ・シャンペーン校</span>
+                    </div>
+                    <div class="lab">
+                        <span class="lab-name">Bimed-Math Lab</span>
+                        <span class="lab-affil">京都大学 ASHBi</span>
+                    </div>
+                    <div class="lab">
+                        <span class="lab-name">St. Giles Laboratory of Human Genetics of Infectious Diseases</span>
+                        <span class="lab-affil">ロックフェラー大学 &rarr; UT サウスウェスタン・メディカル・センター</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="label">
+                <span class="t-en"><span class="l-S">C</span><span class="l-h">o</span><span class="l-u">d</span><span class="l-t">e</span></span>
+                <span class="t-ja">コード</span>
+            </div>
+            <div class="entry">
+                <a href="https://github.com/shutaiwai" class="text-link">
+                    <span class="t-en">View on Github</span>
+                    <span class="t-ja">GitHub を見る</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="pubs" class="tab-content">
+        <div class="grid">
+            <div class="label">
+                <span class="t-en"><span class="l-S">W</span><span class="l-h">o</span><span class="l-u">r</span><span class="l-t">k</span><span class="l-a1">s</span></span>
+                <span class="t-ja">論文</span>
+            </div>
+            <div class="entry">
+                <strong>Twisted aughts of alternating involutions</strong><br>
+                <span style="opacity: 0.7; font-size: 0.9em;">
+                    <span class="t-en">Joint work with R.N. Bhat, C. Cobeli, Z. Ye, and A. Zaharescu</span>
+                    <span class="t-ja">共著: R.N. Bhat, C. Cobeli, Z. Ye, A. Zaharescu</span>
+                </span><br>
+                <a href="https://arxiv.org/abs/2509.17838" class="text-link">
+                    <span class="t-en">View on arXiv</span>
+                    <span class="t-ja">arXiv で見る</span>
+                </a>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="label">
+                <span class="t-en"><span class="l-S">S</span><span class="l-h">c</span><span class="l-u">h</span><span class="l-t">o</span><span class="l-a1">l</span><span class="l-i">a</span><span class="l-w">r</span></span>
+                <span class="t-ja">Scholar</span>
+            </div>
+            <div class="entry">
+               
+                <a href="https://scholar.google.com/citations?user=YOUR_ID" class="text-link">
+                    <span class="t-en">Google Scholar profile</span>
+                    <span class="t-ja">Google Scholar プロフィール</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid #3a506b;
+                   font-size: 0.85rem; letter-spacing: 0.05em; color: #6b7a99;">
+        &copy; <span id="year">2026</span> Shuta Iwai.
+        <span class="t-en">All rights reserved.</span>
+        <span class="t-ja">無断転載を禁じます。</span>
+    </footer>
+
+    <script>
+        function showTab(tabId, el) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-link').forEach(l => l.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            el.classList.add('active');
+        }
+
+        function setLang(lang) {
+            document.body.classList.toggle('ja', lang === 'ja');
+            document.documentElement.lang = lang;
+            document.querySelectorAll('.lang-toggle span').forEach(function (s) {
+                s.classList.toggle('active', s.dataset.lang === lang);
+            });
+        }
+
+        (function () {
+            var NS = 'http://www.w3.org/2000/svg';
+
+            function drawSlashes() {
+                var wave = document.getElementById('dnaWave');
+                var box  = document.getElementById('slashes');
+                if (!wave || !box) return;
+                var colors = ['#ffbc42', '#ff7f50', '#00d2d3', '#d1d9e6']; 
+                var N = 18, len = wave.getTotalLength(), half = 6;
+                for (var i = 0; i < N; i++) {
+                    var d  = ((i + 0.5) / N) * len;
+                    var p  = wave.getPointAtLength(d);
+                    var p2 = wave.getPointAtLength(Math.min(len, d + 0.5));
+                    var a  = Math.atan2(p2.y - p.y, p2.x - p.x);
+                    var nx = -Math.sin(a), ny = Math.cos(a);
+                    var ln = document.createElementNS(NS, 'line');
+                    ln.setAttribute('x1', (p.x - nx * half).toFixed(2));
+                    ln.setAttribute('y1', (p.y - ny * half).toFixed(2));
+                    ln.setAttribute('x2', (p.x + nx * half).toFixed(2));
+                    ln.setAttribute('y2', (p.y + ny * half).toFixed(2));
+                    ln.setAttribute('stroke', colors[i % 4]);
+                    ln.setAttribute('stroke-width', '2.4');
+                    ln.setAttribute('stroke-linecap', 'round');
+                    box.appendChild(ln);
+                }
+            }
+
+            function drawChromosome() {
+                var box = document.getElementById('chromo');
+                if (!box) return;
+                var cx = 470, cy = 38;           
+                var armLen = 32, coilR = 5, turns = 5, steps = 64; 
+                var dirs = [[-1,-1],[1,-1],[-1,1],[1,1]];
+                dirs.forEach(function (dir) {
+                    var L = Math.hypot(dir[0], dir[1]);
+                    var ax = dir[0]/L, ay = dir[1]/L;
+                    var px = -ay, py = ax;
+                    var d = '';
+                    for (var i = 0; i <= steps; i++) {
+                        var s  = i / steps;
+                        var la = s * armLen + coilR * Math.cos(2 * Math.PI * turns * s);
+                        var lb = coilR * Math.sin(2 * Math.PI * turns * s);
+                        var X  = cx + ax * la + px * lb;
+                        var Y  = cy + ay * la + py * lb;
+                        d += (i === 0 ? 'M' : 'L') + X.toFixed(2) + ',' + Y.toFixed(2) + ' ';
+                    }
+                    var p = document.createElementNS(NS, 'path');
+                    p.setAttribute('d', d);
+                    p.setAttribute('fill', 'none');
+                    p.setAttribute('stroke', '#5bc0be');
+                    p.setAttribute('stroke-width', '2.2');
+                    p.setAttribute('stroke-linecap', 'round');
+                    p.setAttribute('stroke-linejoin', 'round');
+                    box.appendChild(p);
+                });
+                var dot = document.createElementNS(NS, 'circle');
+                dot.setAttribute('cx', cx); dot.setAttribute('cy', cy);
+                dot.setAttribute('r', '3.4'); dot.setAttribute('fill', '#ffbc42');
+                box.appendChild(dot);
+            }
+
+        
+            function drawMathStrip() {
+                var box = document.getElementById('mathband');
+                if (!box) return;
+                var cyan = '#5bc0be', baseY = 38;
+                function add(tag, attrs, text) {
+                    var e = document.createElementNS(NS, tag);
+                    for (var k in attrs) e.setAttribute(k, attrs[k]);
+                    if (text != null) e.textContent = text;
+                    box.appendChild(e);
+                    return e;
+                }
+
+               
+                add('path', { d: 'M 26,45 C 14,42 14,30 26,29 C 38,28 39,39 28,41 C 23,42 24,38 40,38',
+                              fill: 'none', stroke: cyan, 'stroke-width': 2, 'stroke-linecap': 'round' });
+
+               
+                var primes = [2, 3, 5, 7, 11];
+                var xs     = [64, 96, 138, 186, 236];
+                var stepH  = 7, endX = 266, y = baseY;
+                var d = 'M 40,' + baseY + ' L ' + xs[0] + ',' + baseY;
+                for (var i = 0; i < xs.length; i++) {
+                    d += ' L ' + xs[i] + ',' + (y - stepH);     
+                    y -= stepH;
+                    var nextX = (i < xs.length - 1) ? xs[i + 1] : endX;
+                    d += ' L ' + nextX + ',' + y;                 
+                }
+                var stairTopY = y;
+                add('path', { d: d, fill: 'none', stroke: cyan, 'stroke-width': 2,
+                              'stroke-linecap': 'round', 'stroke-linejoin': 'round' });
+
+            
+                var pc = { 2: '#d1d9e6', 3: '#ffbc42', 5: '#ff7f50', 7: '#00d2d3', 11: '#d1d9e6' };
+                for (var i = 0; i < primes.length; i++) {
+                    add('text', { x: xs[i], y: 60, 'text-anchor': 'middle',
+                                  'font-family': "'Space Mono', monospace", 'font-size': 9,
+                                  fill: pc[primes[i]], opacity: 0.9 }, primes[i]);
+                }
+
+               
+                var cxN = 370, s = 50, t0 = 1.2;
+                function nx(t) { return cxN + (1 - t * t) * s; }
+                function ny(t) { return baseY - (t * t * t - t) * s; }
+                var pts = [], N = 140;
+                for (var k = 0; k <= N; k++) {
+                    var t = -t0 + (2 * t0) * k / N;
+                    pts.push(nx(t).toFixed(2) + ',' + ny(t).toFixed(2));
+                }
+                add('path', { d: 'M ' + pts.join(' L '), fill: 'none', stroke: cyan,
+                              'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' });
+
+              
+                var ux = nx(t0), uy = ny(t0);
+                add('path', { d: 'M ' + endX + ',' + stairTopY + ' C ' +
+                                  (endX + 34) + ',' + stairTopY + ' ' +
+                                  (ux - 26) + ',' + (uy - 1) + ' ' + ux.toFixed(1) + ',' + uy.toFixed(1),
+                              fill: 'none', stroke: cyan, 'stroke-width': 2, 'stroke-linecap': 'round' });
+
+                add('circle', { cx: cxN, cy: baseY, r: 3.6, fill: '#ffbc42' });
+            }
+
+            function draw(){ drawSlashes(); drawChromosome(); drawMathStrip(); }
+            if (document.readyState !== 'loading') draw();
+            else document.addEventListener('DOMContentLoaded', draw);
+        })();
+    </script>
+</body>
+</html>
